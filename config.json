@@ -1,0 +1,182 @@
+{
+  "_meta": {
+    "schema_version": "1.0.0",
+    "config_name": "ShiftController Remote Config",
+    "author": "Nayem Hasan",
+    "config_url": "https://nayem.net/shiftcontroller/config.json",
+    "last_updated": "2026-05-09",
+    "description": "Remote config for ShiftController extension. Controls all visual, behavioral, and kill-switch settings.",
+    "notes": "Upload this file to https://nayem.net/shiftcontroller/config.json — extension fetches and caches it every hour. Change kill_switch.active to true to remotely disable all instances. Version: 0.0.0.1",
+    "_example_meta": "This metadata section contains schema info and deployment details. Use config_url to keep extension synchronized."
+  },
+
+  "kill_switch": {
+    "active": false,
+    "_active_comment": "EXAMPLE: Set to true to disable all extension instances globally. Example: {'active': true, 'mode': 'brick'}",
+    "mode": "brick",
+    "_mode_comment": "Control deactivation behavior. Options: 'silent' (no UI), 'message' (show message), 'brick' (permanent disable). Example: 'message'",
+    "message": "ShiftController has been discontinued. Thank you for using it.",
+    "_message_comment": "Custom message shown when mode='message'. Example: 'Service will be unavailable for maintenance on 2026-05-15'",
+    "brick_message": "This copy of ShiftController is no longer authorized. The extension has been permanently disabled.",
+    "_brick_message_comment": "Message shown when mode='brick'. This is irreversible. Example for licensing: 'License expired. Please renew at admin.shiftcontroller.com'",
+    "redirect_url": "",
+    "_redirect_url_comment": "Optional URL to redirect users when extension is killed. Example: 'https://shiftcontroller.nayem.net/discontinued'",
+    "wipe_data": true,
+    "_wipe_data_comment": "If true, clears all user shortcuts from localStorage when killed. Example usage: {'active': true, 'wipe_data': true} for GDPR compliance",
+    "disable_content_scripts": true,
+    "_disable_content_scripts_comment": "If true, stops content scripts from running on web pages. Prevents further data collection. Example: Set to true for privacy mode."
+  },
+
+  "branding": {
+    "company_name": "ShiftController",
+    "_company_name_comment": "Brand name displayed in UI. Example: 'MyCompany Shortcuts' or 'AutoBot Pro'",
+    "company_name_split": 5,
+    "_company_name_split_note": "Character index to split name into two spans: 'Shift' + 'Controller'. Second part gets accent color. Example: Split at 5 creates 'Shift' (base) + 'Controller' (accent).",
+    "company_tagline": "Record any clickable element. Map it to a keyboard shortcut.",
+    "_tagline_comment": "Subtitle shown under brand name. Example: 'Automate your workflow in seconds' or 'Smart shortcuts for power users'",
+    "website_url": "https://ShiftController.nayem.net",
+    "_website_url_comment": "Link when clicking logo. Example: 'https://mycompany.com/products/shiftcontroller'",
+    "author_name": "Nayem Hasan",
+    "author_url": "https://nayem.net",
+    "_author_comment": "Creator attribution. Example author_name: 'Built by TechTeam' or 'By Acme Corp'",
+    "show_author": true,
+    "_show_author_comment": "Toggle author credit display at bottom of popup. EXAMPLE FALSE: {'show_author': false} to hide completely",
+    "logo_type": "builtin_bolt",
+    "_logo_type_options": ["builtin_bolt", "builtin_shield", "builtin_zap", "url", "svg_inline"],
+    "_logo_type_comment": "Icon style. 'builtin_*' uses built-in SVG. 'url' loads from logo_url. 'svg_inline' uses logo_svg_string. EXAMPLE: {'logo_type': 'builtin_shield'} for security theme",
+    "logo_url": "",
+    "_logo_url_comment": "External image URL when logo_type='url'. Example: 'https://cdn.example.com/logo-64px.png'",
+    "logo_svg_string": "",
+    "_logo_svg_comment": "Inline SVG when logo_type='svg_inline'. Example: '<svg>...</svg>' (CSP-safe)",
+    "support_email": "",
+    "_support_email_comment": "Support contact email. Example: 'support@company.com' — displayed in dashboard footer",
+    "privacy_policy_url": "",
+    "_privacy_comment": "GDPR compliance. Example: 'https://company.com/privacy'",
+    "terms_url": "",
+    "_terms_comment": "Terms of service link. Example: 'https://company.com/terms'"
+  },
+
+  "theme": {
+    "preset": "dark_neon",
+    "_preset_options": ["dark_neon", "dark_orange", "dark_charcoal", "midnight_blue", "forest_dark", "pure_white", "custom"],
+    "_preset_note": "If preset is 'custom' or any individual color field is non-empty, those values override the preset. Preset is the fallback.",
+    "base_mode": "dark",
+    "_base_mode_options": ["dark", "light"],
+
+    "color_bg": "#0d0d0d",
+    "color_surface": "#141414",
+    "color_surface2": "#1c1c1c",
+    "color_border": "rgba(255,255,255,0.08)",
+    "color_accent": "#a3ff00",
+    "color_accent_dim": "rgba(163,255,0,0.15)",
+    "color_accent_glow": "rgba(163,255,0,0.4)",
+    "color_text": "#f0f0f0",
+    "color_text_muted": "#aaaaaa",
+    "color_danger": "#ff4444",
+
+    "border_radius": "10px",
+    "sharp_mode": false,
+    "_sharp_mode_note": "If true, overrides border_radius to 0px everywhere. Creates hard engineering aesthetic.",
+
+    "header_gradient": true,
+    "header_gradient_from": "#111111",
+    "header_gradient_to": "#0d0d0d",
+
+    "accent_square_decorations": false,
+    "_accent_square_decorations_note": "Adds tiny 6x6 accent-colored squares before section headers for editorial effect.",
+
+    "custom_css": "",
+    "_custom_css_note": "Optional raw CSS injected after all theme variables. Use sparingly. Must be CSP-safe (no external URLs)."
+  },
+
+  "typography": {
+    "font_family": "'Montserrat', system-ui, -apple-system, sans-serif",
+    "font_url": "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap",
+    "_font_url_note": "Injected as a <link> in document <head> at runtime. Leave empty to use system fonts.",
+    "heading_weight": "700",
+    "heading_tracking": "-0.02em",
+    "heading_leading": "1.1",
+    "body_size": "13px",
+    "body_weight": "400",
+    "body_leading": "1.5",
+    "mono_family": "'Courier New', Courier, monospace",
+    "antialiasing": true
+  },
+
+  "layout": {
+    "popup_width": "340px",
+    "popup_min_height": "420px",
+    "section_padding": "12px 16px",
+    "shortcut_list_max_height": "200px",
+    "scrollbar_width": "3px",
+    "shadow_elevated": "0 8px 32px rgba(0,0,0,0.4)",
+    "_shadow_note": "Used only for floating/elevated elements. Not for flat content."
+  },
+
+  "animations": {
+    "enabled": true,
+    "entry_fade": true,
+    "entry_slide_y": "12px",
+    "duration_fast": "150ms",
+    "duration_normal": "300ms",
+    "duration_slow": "700ms",
+    "hover_scale": "1.03",
+    "image_hover_scale": "1.05",
+    "stagger_delay_ms": 50,
+    "skeleton_timeout_ms": 1200,
+    "_skeleton_timeout_note": "Max ms to show skeleton loader before forcing UI render with defaults."
+  },
+
+  "features": {
+    "show_shortcut_hints": true,
+    "_show_shortcut_hints_note": "Shows 'Start Record: shift+s | Stop: ESC' strip below record button. EXAMPLE: {'show_shortcut_hints': false} to hide for cleaner UI",
+    "show_domain_toggle": true,
+    "_domain_toggle_comment": "Displays on/off toggle for current domain. EXAMPLE: Set false to always enable extension on all sites",
+    "show_analytics": false,
+    "_show_analytics_note": "Shows click-saved counter in UI. Data stays local. EXAMPLE: {'show_analytics': true} for productivity metrics",
+    "show_developer_panel": true,
+    "_dev_panel_comment": "Enables developer/profile page access. EXAMPLE: Set false to simplify UI for non-technical users",
+    "consent_required": true,
+    "_consent_required_note": "Shows privacy consent overlay on first launch. EXAMPLE: {'consent_required': false} to skip for fully automated deployment",
+    "record_hotkey": "shift+s",
+    "_record_hotkey_comment": "Keyboard shortcut to start recording. EXAMPLE OPTIONS: 'ctrl+shift+r', 'alt+w', 'meta+shift+a'",
+    "stop_hotkey": "Escape",
+    "_stop_hotkey_comment": "Keyboard shortcut to stop recording/close inspector. EXAMPLE OPTIONS: 'Escape', 'x', 'ctrl+shift+c'",
+    "dashboard_enabled": true,
+    "_dashboard_comment": "Enable full dashboard (Key Map, Domains, Defaults views). EXAMPLE: false to show only popup",
+    "max_shortcuts_per_domain": 50,
+    "_max_shortcuts_comment": "Maximum shortcuts allowed per domain. EXAMPLE: {'max_shortcuts_per_domain': 100} for power users",
+    "allow_global_shortcuts": true,
+    "_allow_global_shortcuts_note": "If false, shortcuts are domain-scoped only. No cross-site shortcuts. EXAMPLE: {'allow_global_shortcuts': false} for security",
+    "auto_purge_enabled": true,
+    "_auto_purge_comment": "Automatically delete old shortcuts based on interval",
+    "auto_purge_interval_hours": 24,
+    "_auto_purge_interval_comment": "Purge shortcuts older than N hours. EXAMPLE: {'auto_purge_interval_hours': 720} purges after 30 days"
+  },
+
+  "remote_behavior": {
+    "config_cache_ttl_seconds": 3600,
+    "_config_cache_ttl_note": "How long to cache this config locally before re-fetching. Default 1 hour.",
+    "config_fetch_on_startup": true,
+    "config_fetch_on_popup_open": false,
+    "_config_fetch_on_popup_open_note": "If true, always re-fetches when popup opens (uses more bandwidth). Recommended false.",
+    "version_check_url": "",
+    "_version_check_url_note": "Optional URL to check for extension updates. Leave empty to disable.",
+    "telemetry_enabled": false,
+    "_telemetry_note": "No telemetry is ever sent regardless of this value. Reserved for future opt-in analytics.",
+    "fallback_to_stale_cache": true,
+    "_fallback_note": "If fetch fails, use stale cached config instead of defaults. Recommended true."
+  },
+
+  "copy": {
+    "_note": "All user-facing copy strings. Override defaults here.",
+    "consent_title": "Privacy & Consent",
+    "consent_body": "ShiftController captures keyboard and mouse input to create automation macros. Your data is encrypted locally and never leaves your device. By continuing, you consent to this local data collection.",
+    "consent_button": "I Agree",
+    "empty_state_text": "No shortcuts yet",
+    "record_button_label": "Record New Shortcut",
+    "section_label_shortcuts": "Active Shortcuts",
+    "domain_toggle_title": "Enable on this domain",
+    "kill_message_title": "Extension Disabled"
+  }
+}

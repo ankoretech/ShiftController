@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "ShiftController",
+  "version": "0.0.0.1",
+  "description": "Record any clickable element and map it to a custom keyboard shortcut.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background/service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/inspector.js"],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "tabs",
+    "scripting",
+    "activeTab",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/shiftcontroller/*"
+  ],
+  "optional_host_permissions": ["<all_urls>"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none';"
+  },
+  "commands": {},
+  "web_accessible_resources": [
+    {
+      "resources": ["content/inspector.js", "dashboard/dashboard.html", "dashboard/dashboard.css", "dashboard/dashboard.js", "developer/developer.html", "developer/developer.css", "developer/developer.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
