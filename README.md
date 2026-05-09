@@ -2,7 +2,7 @@
 
 A powerful Chrome extension providing advanced shift management, workflow automation, and system control features with customizable configurations and developer tools.
 
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/8f0a7699-89a0-4d2b-a396-43ca65c7beb6" />
+<img width="1366" height="768" alt="Screenshot (435)" src="https://github.com/user-attachments/assets/101b770c-5c0f-4094-9d8e-cb1595921a0c" />
 
 ## Features
 
@@ -56,8 +56,8 @@ ShiftController0.0.0.1/
 - [Quick Start Guide](CONFIG_QUICK_START.md)
 - [System Configuration](CONFIG_SYSTEM.md)
 - [Implementation Details](IMPLEMENTATION.md)
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/10631814-3eea-4856-b42e-254ba4a6ad64" />
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/e4ddbb24-a03f-42bf-a905-606fa3267844" />
+<img width="1366" height="768" alt="Screenshot (436)" src="https://github.com/user-attachments/assets/07fdf447-e780-4871-970f-833c9436a755" />
+<img width="1366" height="768" alt="Screenshot (437)" src="https://github.com/user-attachments/assets/538401c3-4d00-4866-8252-e1e930a9ff92" />
 
 ## Requirements
 
@@ -105,7 +105,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Author
 
-Nayem Hasan
+###Nayem Hasan
 
 ## Support
 
